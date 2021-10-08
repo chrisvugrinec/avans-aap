@@ -1,7 +1,7 @@
 param
 (
     $token,
-    $poolname="Azure virtual Desktop",
+    $poolname="bap-aap-tier1",
     $agentname="$env:COMPUTERNAME"
 )
 
@@ -16,7 +16,7 @@ $webClient = [System.Net.WebClient]::new()
 $webClient.DownloadFile("https://vstsagentpackage.azureedge.net/agent/2.190.0/vsts-agent-win-x64-2.190.0.zip", "c:\agent\vsts-agent-win-x64-2.190.0.zip")
 Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("c:\agent\vsts-agent-win-x64-2.190.0.zip", "$PWD")
 $param="--unattended  --url https://dev.azure.com/Avansuas --auth pat --token $token --pool "+""""+"$poolname"+""""+" --agent $agentname --work c:\azuredevopsworkdir --runAsService --windowsLogonAccount 'nt authority\network service'"
-Start-Process C:\agent\config.cmd -ArgumentList $param -PassThru
+Start-Process C:\agent\config.cmd -ArgumentList $param -PassThru 
 
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -ErrorAction Continue
 Register-PSRepository -Default -InstallationPolicy Trusted -ErrorAction Continue
