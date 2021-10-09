@@ -21,6 +21,7 @@ Start-Process C:\agent\config.cmd -ArgumentList $param -PassThru
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -ErrorAction Continue
 Register-PSRepository -Default -InstallationPolicy Trusted -ErrorAction Continue
 Install-Module -Name AZ -Scope AllUsers -Force
+Install-Module -Name Az.Subscription -RequiredVersion 0.7.3
 
 
 set-timezone -Id 'W. Europe Standard Time'
