@@ -22,6 +22,10 @@ Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -ErrorActio
 Register-PSRepository -Default -InstallationPolicy Trusted -ErrorAction Continue
 Install-Module -Name AZ -Scope AllUsers -Force
 Install-Module -Name Az.Subscription -RequiredVersion 0.7.3
+# Install chocolately
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+# Install terraform with choco
+choco install terraform --force --yes
 
 
 set-timezone -Id 'W. Europe Standard Time'
