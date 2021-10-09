@@ -26,6 +26,7 @@ Install-Module -Name Az.Subscription -RequiredVersion 0.7.3
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 # Install terraform with choco
 choco install terraform --force --yes
-
+# Install git client with coco
+choco install git --force --yes
 
 set-timezone -Id 'W. Europe Standard Time'
