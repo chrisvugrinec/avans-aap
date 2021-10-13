@@ -29,6 +29,7 @@ choco install terraform --force --yes
 # Install git client with coco
 choco install git --force --yes
 choco install python --force --yes
+choco install visualstudio2019community --force --yes
 
 
 set-timezone -Id 'W. Europe Standard Time'
