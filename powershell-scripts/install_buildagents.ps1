@@ -28,5 +28,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco install terraform --force --yes
 # Install git client with coco
 choco install git --force --yes
+choco install python --force --yes
+
 
 set-timezone -Id 'W. Europe Standard Time'
